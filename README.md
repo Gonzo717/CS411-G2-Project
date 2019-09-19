@@ -1,6 +1,7 @@
 # CS411-G2-Project
 
 Repo for CS 411 Software Engineering Project
+
 Members: Gonzalo Rosales, Benjamin Sui, Jonathan Luo, Richard Cho
 
 ## Project Ideas

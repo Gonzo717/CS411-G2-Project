@@ -1,0 +1,1 @@
+As a user, I want to be able to see a list of my previous profile uploads because I want to see how my profile has evolved. There will be a profile button that the user will click to redirect to the profile page. The profile page will include information about the user such as name and age, but also a list of the previous dating profile uploads and the tags associated with them. 

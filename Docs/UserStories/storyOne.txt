@@ -1,0 +1,1 @@
+As a user, I want to be able to login with my Facebook account so I can access the dating application and generate an account based on existing data from my Facebook profile. If I enter an incorrect password, I’ll see an error message. I will  have the option to try to enter my password again or request an email to reset my password.

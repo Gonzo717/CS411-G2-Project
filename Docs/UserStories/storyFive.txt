@@ -1,0 +1,1 @@
+As a user, I want to be able to get date location ideas based on the content of me and my matches’ profile. The messages box will have a bot, that can be called to suggest date ideas based on the location, photos, and music choices of my profile and my potential match’s profile.

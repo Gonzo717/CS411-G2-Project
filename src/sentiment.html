@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+        <title>Sentiment Analyzer</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="CSS.css"> 
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<title>Sentiment Analyzer</title>
+
+</head>
+<body>
+
+        <script>
+                function myFunction() {
+     
+                 var str = document.getElementById("userInput").value;
+                 console.log(str)
+     
+                 var settings = {
+                 "async": true,
+                 "crossDomain": true,
+                 "url": "https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/sentiment",
+                 "method": "POST",
+                 "headers": {
+                     "Ocp-Apim-Subscription-Key": "4230848ace634dd7840de696b837da85",
+                     "Content-Type": "application/json",
+                     "Accept": "application/json",
+                     "User-Agent": "PostmanRuntime/7.18.0",
+                     "Cache-Control": "no-cache",
+                     "Postman-Token": "52cdb447-7637-474f-985e-0d9120c30872,14d2bc8e-e277-490f-8b9a-213330acf925",
+                     "Host": "westcentralus.api.cognitive.microsoft.com",
+                     "Accept-Encoding": "gzip, deflate",
+                     "Content-Length": "209",
+                     "Connection": "keep-alive",
+                     "cache-control": "no-cache"
+                 },
+                 "data": "{\n        \"documents\": [\n            {\n                \"language\": \"en\",\n                \"id\": \"1\",\n                \"text\": \"" + str + "\"\n            }\n        ]\n    }"            };
+     
+                 $.ajax(settings).done(function (response) {
+                     alert("Sentiment score is: " + response.documents[0].score);
+                 });
+             }
+         </script>
+
+<div class="top">
+	<h1>Sentiment Analysis</h1>
+</div>
+
+<h3>Enter text below</h3>
+
+<div class="about_main">
+	<div class="upload_button">
+
+    	
+        <input class="rand_button" type="text" id="userInput" />
+        <br> <br>
+        <button class="btn" type="submit" onclick="myFunction()">Analyze</button>
+        
+	</div>
+</div>
+
+</body>
+
+</html>

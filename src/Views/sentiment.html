@@ -19,23 +19,23 @@
                  console.log(str)
      
                  var settings = {
-                 "async": true,
-                 "crossDomain": true,
-                 "url": "https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/sentiment",
-                 "method": "POST",
-                 "headers": {
-                     "Ocp-Apim-Subscription-Key": "4230848ace634dd7840de696b837da85",
-                     "Content-Type": "application/json",
-                     "Accept": "application/json",
-                     "User-Agent": "PostmanRuntime/7.18.0",
-                     "Cache-Control": "no-cache",
-                     "Postman-Token": "52cdb447-7637-474f-985e-0d9120c30872,14d2bc8e-e277-490f-8b9a-213330acf925",
-                     "Host": "westcentralus.api.cognitive.microsoft.com",
-                     "Accept-Encoding": "gzip, deflate",
-                     "Content-Length": "209",
-                     "Connection": "keep-alive",
-                     "cache-control": "no-cache"
-                 },
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://eastus.api.cognitive.microsoft.com/text/analytics/v2.1/sentiment",
+                    "method": "POST",
+                    "headers": {
+                        "Ocp-Apim-Subscription-Key": "bc0268c69a924f75bdc1c1fdc11a3b95",
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "User-Agent": "PostmanRuntime/7.19.0",
+                        "Cache-Control": "no-cache",
+                        "Postman-Token": "27d2038a-51e6-40dd-a623-d1a2c4e1d14a,6ae4e576-2a1a-46b3-9343-329485f43d13",
+                        "Host": "eastus.api.cognitive.microsoft.com",
+                        "Accept-Encoding": "gzip, deflate",
+                        "Content-Length": "1087",
+                        "Connection": "keep-alive",
+                        "cache-control": "no-cache"
+                    },
                  "data": "{\n        \"documents\": [\n            {\n                \"language\": \"en\",\n                \"id\": \"1\",\n                \"text\": \"" + str + "\"\n            }\n        ]\n    }"            };
      
                  $.ajax(settings).done(function (response) {

@@ -34,7 +34,7 @@ module.exports = function(app, passport){
     }));
 
     app.get('/profile', isLoggedIn, function(req, res){
-        res.render('profile.ejs', { user: req.user, sentiment: '', tags:''});
+        res.render('profile.ejs', { user: req.user, sentiment: '', tags:'', caption:''});
     });
     app.post('/profile', isLoggedIn, function(req, res){
         let userInput = req.body.profileBio;
@@ -49,10 +49,7 @@ module.exports = function(app, passport){
             response.on('end', function () {
                 let body_ = JSON.parse(body);
                 let body__ = JSON.stringify(body_["documents"][0]["score"], null, '  ');
-                console.log(body__);
                 sentimentVal = body__;
-                console.log(sentimentVal);
-                //res.render('profile.ejs', { user: req.user, sentiment: sentimentVal, tags:''});
             });
             response.on('error', function (e) {
                 console.log('Error: ' + e.message);
@@ -90,7 +87,8 @@ module.exports = function(app, passport){
 
 // Request parameters.
         const params = {
-            'visualFeatures': 'Description,Tags',
+            'visualFeatures': 'Categories,Description,Color',
+            'details': '',
             'language': 'en'
         };
 
@@ -110,10 +108,9 @@ module.exports = function(app, passport){
                 return;
             }
             let json = JSON.parse(body);
-            let imageVal = JSON.stringify(json['description']['tags'], null, '  ');
-            console.log(imageVal);
-            //res.send(jsonResponse);
-            res.render('profile.ejs', { user: req.user, sentiment: sentimentVal, tags: imageVal});
+            let imageValue = JSON.stringify(json['description']['tags'], null, '  ');
+            let imageDescription = JSON.stringify(json['description']['captions'][0]['text'], null, '  ');
+            res.render('profile.ejs', { user: req.user, sentiment: sentimentVal, tags: imageValue, caption: imageDescription});
 
         });
     });
